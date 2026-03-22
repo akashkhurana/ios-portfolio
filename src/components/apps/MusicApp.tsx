@@ -19,7 +19,7 @@ export default function MusicApp() {
             frameBorder="0"
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
+            loading="eager"
             className="rounded-2xl"
           ></iframe>
         </div>
