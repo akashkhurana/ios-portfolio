@@ -23,4 +23,23 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide thick desktop scrollbars to mimic iOS native scrolling */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@layer utilities {
+  .squircle {
+    border-radius: 22.5%;
+    border-curve: continuous;
+    -webkit-border-curve: continuous;
+  }
 }

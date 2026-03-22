@@ -65,7 +65,7 @@ export default function HomeScreen() {
               className={`w-14 h-14 flex items-center justify-center text-white relative group/icon ${
                 typeof app.icon === "string"
                   ? "bg-transparent drop-shadow-xl"
-                  : `rounded-[22.5%] overflow-hidden shadow-xl shadow-black/20 ${app.color}`
+                  : `squircle overflow-hidden drop-shadow-xl ${app.color}`
               }`}
             >
               {typeof app.icon === "string" ? (
@@ -73,7 +73,7 @@ export default function HomeScreen() {
               ) : (
                 <>
                   {/* Inner bezel highlight for modern iOS glass/3D effect */}
-                  <div className="absolute inset-0 rounded-[22.5%] border border-white/20 pointer-events-none" />
+                  <div className="absolute inset-0 squircle border border-white/20 pointer-events-none" />
                   <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover/icon:opacity-100 transition-opacity pointer-events-none" />
                   <app.icon className="w-7 h-7 stroke-[1.5] drop-shadow-md z-10 pointer-events-none" />
                 </>

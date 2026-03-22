@@ -7,25 +7,39 @@ import { Briefcase, Calendar, ChevronRight } from "lucide-react";
 export default function ExperienceApp() {
   const experiences = [
     {
-      role: "Senior Frontend Engineer",
-      company: "Tech Giant Inc.",
-      date: "Jan 2021 - Present",
+      role: "Senior Software Developer",
+      company: "Reactore",
+      date: "Apr 2023 - Present",
       type: "Full-time",
-      logo: "bg-blue-500"
+      logo: "bg-blue-600",
+      details: [
+        "Led design and development of a low-code PaaS platform enabling internal teams to generate full-stack Angular + Node.js applications.",
+        "Engineered Three.js 3D mine model rendering as a platform feature, eliminating the need for a dedicated 3D toolchain.",
+        "Delivered 90% bundle size reduction via code-splitting, tree-shaking, and lazy loading."
+      ]
     },
     {
       role: "Software Developer",
-      company: "Startupify LLC",
-      date: "Jun 2018 - Dec 2020",
+      company: "Capgemini",
+      date: "Mar 2021 - 2023",
       type: "Full-time",
-      logo: "bg-emerald-500"
+      logo: "bg-indigo-500",
+      details: [
+        "Full-stack features for Walt Disney Parks & Resorts (Angular SPA + Node.js/Express.js APIs + MongoDB/MySQL).",
+        "Led multi-major Angular framework upgrade across 3 cross-functional squads in production — zero regressions.",
+        "Shipped enterprise SSO (MyID) and i18n across 5+ locales."
+      ]
     },
     {
-      role: "Frontend Intern",
-      company: "Web Solutions",
-      date: "May 2017 - Aug 2017",
+      role: "Software Engineer Intern",
+      company: "Fareportal",
+      date: "Jun 2019 - Aug 2019",
       type: "Internship",
-      logo: "bg-purple-500"
+      logo: "bg-emerald-500",
+      details: [
+        "Refactored legacy JavaScript into a modular architecture.",
+        "Reduced maintenance overhead by 30% and improved feature delivery velocity."
+      ]
     }
   ];
 
@@ -36,28 +50,31 @@ export default function ExperienceApp() {
       <div className="flex-1 overflow-y-auto px-4 pb-12">
         <h1 className="text-3xl font-bold mt-4 mb-6">Experience</h1>
 
-        <div className="bg-white dark:bg-[#1c1c1e] rounded-xl overflow-hidden mb-8 border border-zinc-200 dark:border-zinc-800/50">
+        <div className="space-y-4 mb-8">
           {experiences.map((exp, i) => (
-            <div
-              key={i}
-              className={`flex items-center p-4 ${i !== experiences.length - 1 ? 'border-b border-zinc-200 dark:border-zinc-800' : ''}`}
-            >
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-white shrink-0 mr-4 ${exp.logo}`}>
-                <Briefcase className="w-6 h-6" />
-              </div>
-
-              <div className="flex-1 min-w-0">
-                <h3 className="font-bold text-[15px] truncate">{exp.role}</h3>
-                <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400">{exp.company}</p>
-                <div className="flex items-center gap-2 text-xs text-zinc-500 mt-1">
-                  <Calendar className="w-3 h-3" />
+            <div key={i} className="bg-white dark:bg-[#1c1c1e] rounded-[18px] p-5 shadow-sm border border-zinc-200/50 dark:border-zinc-800/50">
+              <div className="flex justify-between items-start mb-1">
+                <h2 className="text-[17px] font-bold tracking-tight text-zinc-900 dark:text-white">{exp.role}</h2>
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 text-[12px] font-medium text-zinc-500">
+                  <Calendar className="w-3.5 h-3.5" />
                   <span>{exp.date}</span>
-                  <span>•</span>
-                  <span>{exp.type}</span>
                 </div>
               </div>
+              
+              <div className="flex items-center gap-2 mb-4">
+                <Briefcase className="w-4 h-4 text-blue-500" />
+                <h3 className="text-[15px] font-semibold text-zinc-600 dark:text-zinc-400 tracking-[-0.01em]">{exp.company}</h3>
+                <span className="text-zinc-300 dark:text-zinc-700">•</span>
+                <span className="text-[13px] font-medium text-zinc-500">{exp.type}</span>
+              </div>
 
-              <ChevronRight className="w-5 h-5 text-zinc-400 ml-2" />
+              {exp.details && (
+                <ul className="list-disc list-outside ml-4 text-[14px] text-zinc-600 dark:text-zinc-300 space-y-2 leading-[1.35] tracking-[-0.01em] pr-2">
+                  {exp.details.map((detail, j) => (
+                    <li key={j}>{detail}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>

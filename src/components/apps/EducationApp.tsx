@@ -7,18 +7,25 @@ import { GraduationCap, MapPin, Calendar } from "lucide-react";
 export default function EducationApp() {
   const education = [
     {
-      degree: "Master of Science in Computer Science",
-      school: "Stanford University",
-      location: "Stanford, CA",
-      date: "2018 - 2020",
-      details: ["Specialization in Artificial Intelligence", "GPA: 3.9/4.0", "Research Assistant - Vision Lab"],
+      degree: "B.Tech — Electronics & Communication Engineering",
+      school: "Guru Gobind Singh Indraprastha University (GGSIPU)",
+      location: "Delhi, India",
+      date: "2016 - 2020",
+      details: ["CGPA: 7.55 / 10"],
     },
     {
-      degree: "Bachelor of Science in Software Engineering",
-      school: "University of California, Berkeley",
-      location: "Berkeley, CA",
-      date: "2014 - 2018",
-      details: ["Minor in Mathematics", "President of the CS Club", "Graduated with Honors"],
+      degree: "High School (12th)",
+      school: "Delhi Public School",
+      location: "Faridabad, India",
+      date: "2015",
+      details: ["Percentage: 68.8%"],
+    },
+    {
+      degree: "Secondary School (10th)",
+      school: "Divine Public School",
+      location: "Faridabad, India",
+      date: "2013",
+      details: ["CGPA: 8.8 / 10"],
     }
   ];
 
@@ -36,11 +43,11 @@ export default function EducationApp() {
 
         <div className="space-y-4 mb-8">
           {education.map((edu, i) => (
-            <div key={i} className="bg-white dark:bg-[#1c1c1e] rounded-2xl p-5 shadow-sm border border-zinc-200 dark:border-zinc-800/50">
-              <h2 className="text-lg font-bold text-indigo-500 dark:text-indigo-400 mb-1">{edu.degree}</h2>
-              <h3 className="text-base font-semibold mb-3">{edu.school}</h3>
+            <div key={i} className="bg-white dark:bg-[#1c1c1e] rounded-[18px] p-5 shadow-sm border border-zinc-200 dark:border-zinc-800/50">
+              <h2 className="text-[16px] font-bold text-indigo-500 dark:text-indigo-400 mb-0.5 tracking-tight">{edu.degree}</h2>
+              <h3 className="text-[15px] font-semibold mb-3 tracking-tight">{edu.school}</h3>
               
-              <div className="flex items-center gap-4 text-xs font-medium text-zinc-500 mb-4">
+              <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-500 mb-4 mt-1">
                 <div className="flex items-center gap-1">
                   <Calendar className="w-3.5 h-3.5" />
                   {edu.date}
@@ -51,7 +58,7 @@ export default function EducationApp() {
                 </div>
               </div>
 
-              <ul className="list-disc list-inside text-sm text-zinc-600 dark:text-zinc-400 space-y-1.5 ml-1">
+              <ul className="list-disc list-outside ml-4 mt-2 text-[14px] text-zinc-600 dark:text-zinc-300 space-y-1.5 leading-[1.35] tracking-[-0.01em]">
                 {edu.details.map((detail, j) => (
                   <li key={j}>{detail}</li>
                 ))}

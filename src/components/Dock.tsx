@@ -30,7 +30,7 @@ export default function Dock() {
             className={`w-12 h-12 flex items-center justify-center text-white relative group/dockitem ${
               typeof item.icon === "string"
                 ? "bg-transparent drop-shadow-xl"
-                : `rounded-[22.5%] overflow-hidden shadow-xl shadow-black/20 ${item.color}`
+                : `squircle overflow-hidden drop-shadow-xl ${item.color}`
             }`}
           >
             {typeof item.icon === "string" ? (
@@ -38,7 +38,7 @@ export default function Dock() {
             ) : (
               <>
                 {/* Inner bezel highlight */}
-                <div className="absolute inset-0 rounded-[22.5%] border border-white/20 pointer-events-none" />
+                <div className="absolute inset-0 squircle border border-white/20 pointer-events-none" />
                 <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover/dockitem:opacity-100 transition-opacity pointer-events-none" />
                 <item.icon className="w-6 h-6 stroke-[1.5] drop-shadow z-10 pointer-events-none" />
               </>
