@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useOS } from "./OSProvider";
 import Dock from "./Dock";
-import { CalendarWidget, WeatherWidget } from "./Widgets";
+import { CalendarWidget, WeatherWidget, GithubWidget } from "./Widgets";
 import { 
   Mail, Music, BookOpen, GraduationCap, 
   FileText, Briefcase, Code2, Sparkles
@@ -35,11 +35,12 @@ export default function HomeScreen() {
   if (!isUnlocked) return null;
 
   return (
-    <div className="absolute inset-0 pt-16 px-6 z-10">
-      <div className="grid grid-cols-4 gap-y-6 gap-x-4">
+    <div className="absolute inset-0 pt-12 px-6 z-10 w-full h-full">
+      <div className="grid grid-cols-4 gap-y-[18px] gap-x-4">
         {/* iOS Widgets */}
         <CalendarWidget />
         <WeatherWidget />
+        <GithubWidget />
 
         {/* Regular App Icons */}
         {APPS.map((app) => (

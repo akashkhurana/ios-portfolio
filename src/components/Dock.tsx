@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Github, Linkedin, Code, Phone } from "lucide-react";
+import { Github, Linkedin, Phone, Code } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Dock() {
@@ -9,7 +9,7 @@ export default function Dock() {
     { icon: Github, link: "https://github.com/akashkhurana", color: "bg-gradient-to-b from-zinc-700 to-zinc-900" },
     { icon: Linkedin, link: "https://linkedin.com/in/akash-khurana", color: "bg-gradient-to-b from-blue-500 to-blue-700" },
     { icon: Phone, link: "tel:+919871349123", color: "bg-gradient-to-b from-green-400 to-green-600" },
-    { icon: Code, link: "https://leetcode.com", color: "bg-gradient-to-b from-amber-500 to-yellow-600 outline outline-1 outline-white/10" },
+    { icon: Code, link: "https://leetcode.com/u/akashkhurana55/", color: "bg-gradient-to-b from-amber-500 to-yellow-600 outline outline-1 outline-white/10" },
   ];
 
   return (
