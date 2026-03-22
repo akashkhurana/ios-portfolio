@@ -7,7 +7,7 @@ export default function DeviceShell({ children }: { children: React.ReactNode })
   return (
     <div className="flex h-[100dvh] w-screen items-center justify-center bg-zinc-950 p-0 sm:py-6 sm:px-8">
       {/* Outer Shell strictly for relative positioning of the hardware buttons */}
-      <div className="relative w-full h-full sm:w-[360px] sm:h-[760px]">
+      <div className="relative w-full h-full sm:w-[360px] sm:h-[760px] sm:scale-90 transition-transform origin-center">
 
         {/* Hardware Buttons (Titanium look) - Only visible on desktop */}
         {/* Action Button */}

@@ -6,22 +6,23 @@ import { Folder, ChevronRight, FileText } from "lucide-react";
 
 export default function NotesApp() {
   const folders = [
-    { name: "iCloud", count: 12, icon: <Folder className="w-5 h-5 text-yellow-500 fill-yellow-500" /> },
-    { name: "Recently Deleted", count: 1, icon: <Folder className="w-5 h-5 text-yellow-500 fill-yellow-500" /> },
+    { name: "Frontend Core", count: 8, icon: <Folder className="w-5 h-5 text-yellow-500 fill-yellow-500" /> },
+    { name: "Backend Core", count: 5, icon: <Folder className="w-5 h-5 text-yellow-500 fill-yellow-500" /> },
+    { name: "Graphics & Mapping", count: 3, icon: <Folder className="w-5 h-5 text-yellow-500 fill-yellow-500" /> },
   ];
 
   const recentNotes = [
-    { title: "Project Ideas", preview: "1. Build an AI agent... 2. Learn Rust...", date: "10:41 AM" },
-    { title: "Grocery List", preview: "Eggs, Milk, Bread, Apples, Coffee...", date: "Yesterday" },
-    { title: "Meeting Notes", preview: "Discussed Q3 roadmap and feature complete dates.", date: "Tuesday" },
+    { title: "Angular & Next.js", preview: "Signals, NgRx, React 19, TypeScript, Tailwind CSS, Framer Motion", date: "10:41 AM" },
+    { title: "Node.js Architecture", preview: "Express.js, JWT, REST APIs, Microservices, MongoDB, MySQL", date: "Yesterday" },
+    { title: "3D & Geospatial", preview: "Three.js (WebGL), Leaflet (Real-time tracking), D3.js", date: "Tuesday" },
   ];
 
   return (
     <div className="flex-1 flex flex-col bg-[#f2f2f7] dark:bg-black text-black dark:text-white h-full overflow-hidden relative">
-      <AppHeader title="Folders" />
+      <AppHeader title="Skills" />
       
       <div className="flex-1 overflow-y-auto px-4 pb-8">
-        <h1 className="text-3xl font-bold mt-4 mb-4">Folders</h1>
+        <h1 className="text-3xl font-bold mt-4 mb-4">Categories</h1>
 
         {/* Folders List */}
         <div className="bg-white dark:bg-[#1c1c1e] rounded-xl overflow-hidden mb-6">
@@ -62,9 +63,8 @@ export default function NotesApp() {
       </div>
 
       <div className="absolute bottom-0 w-full h-12 bg-[#f2f2f7]/90 dark:bg-black/90 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between px-4 z-10 mb-6">
-        <button className="text-yellow-500 font-medium text-sm flex gap-1 items-center">
-          <Folder className="w-5 h-5" /> New Folder
-        </button>
+        <div className="text-yellow-500 font-medium text-sm flex gap-1 items-center">
+        </div>
         <button className="text-yellow-500 p-2 -mr-2">
           <FileText className="w-6 h-6" />
         </button>

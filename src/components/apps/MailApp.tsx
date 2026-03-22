@@ -8,30 +8,38 @@ export default function MailApp() {
   const [isComposing, setIsComposing] = useState(false);
 
   const MOCK_MAILS = [
-    { sender: "Recruiter", subject: "Job Opportunity", preview: "Hi, we saw your portfolio and loved it...", time: "10:30 AM", unread: true },
-    { sender: "GitHub", subject: "Action Required", preview: "A new device logged into your account.", time: "Yesterday", unread: false },
-    { sender: "LinkedIn", subject: "You appeared in 15 searches", preview: "See who's looking at your profile.", time: "Tuesday", unread: false },
+    { sender: "Recruiter (Google)", subject: "Full Stack Role", preview: "Hi Akash, we saw your portfolio and loved the architecture...", time: "10:30 AM", unread: true },
+    { sender: "Startup Founder", subject: "Freelance Opportunity", preview: "Are you available for a 3D Three.js project?", time: "Yesterday", unread: false },
+    { sender: "GitHub", subject: "Sponsorship", preview: "Someone sponsored your open source work.", time: "Tuesday", unread: false },
   ];
 
   if (isComposing) {
+    const handleSend = () => {
+      const subject = (document.getElementById('mail-subject') as HTMLInputElement)?.value || 'Inquiry from Portfolio';
+      const body = (document.getElementById('mail-body') as HTMLTextAreaElement)?.value || '';
+      window.location.href = `mailto:akashkhurana55@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      setIsComposing(false);
+    };
+
     return (
       <div className="flex-1 flex flex-col bg-white dark:bg-zinc-900 text-black dark:text-white h-full pt-12 pb-8">
         <div className="flex items-center justify-between px-4 pb-2 border-b border-zinc-200 dark:border-zinc-800">
-          <button onClick={() => setIsComposing(false)} className="text-blue-500 font-medium w-16 text-left">Cancel</button>
+          <button onClick={() => setIsComposing(false)} className="text-blue-500 font-medium w-16 text-left hover:opacity-80">Cancel</button>
           <span className="font-semibold pb-1">New Message</span>
-          <a href="mailto:example@gmail.com" className="text-zinc-400 font-medium w-16 text-right">Send</a>
+          <button onClick={handleSend} className="text-blue-500 font-bold w-16 text-right hover:opacity-80">Send</button>
         </div>
         <div className="flex flex-col px-4 mt-2">
           <div className="flex items-center border-b border-zinc-200 dark:border-zinc-800 py-3">
             <span className="text-zinc-400 w-12 text-sm">To:</span>
-            <input type="text" value="example@gmail.com" readOnly className="flex-1 bg-transparent outline-none text-sm" />
+            <input type="text" value="akashkhurana55@gmail.com" readOnly className="flex-1 bg-transparent outline-none text-[15px] font-medium" />
           </div>
           <div className="flex items-center border-b border-zinc-200 dark:border-zinc-800 py-3">
             <span className="text-zinc-400 w-16 text-sm">Subject:</span>
-            <input type="text" placeholder="Inquiry" className="flex-1 bg-transparent outline-none text-sm" />
+            <input id="mail-subject" type="text" placeholder="Job Opportunity" className="flex-1 bg-transparent outline-none text-[15px]" />
           </div>
           <textarea 
-            className="flex-1 mt-4 bg-transparent outline-none resize-none text-sm h-64"
+            id="mail-body"
+            className="flex-1 mt-4 bg-transparent outline-none resize-none text-[15px] h-64 leading-relaxed"
             placeholder="Write your message here..."
           ></textarea>
         </div>

@@ -21,7 +21,7 @@ export type AppMeta = {
 export const APPS: AppMeta[] = [
   { id: "mail", name: "Mail", icon: Mail, color: "bg-gradient-to-b from-blue-400 to-blue-600" },
   { id: "music", name: "Music", icon: Music, color: "bg-gradient-to-b from-rose-400 to-rose-600" },
-  { id: "notes", name: "Notes", icon: BookOpen, color: "bg-gradient-to-b from-yellow-300 to-yellow-500 text-yellow-900" },
+  { id: "notes", name: "Skills", icon: BookOpen, color: "bg-gradient-to-b from-yellow-300 to-yellow-500 text-yellow-900" },
   { id: "education", name: "Education", icon: GraduationCap, color: "bg-gradient-to-b from-indigo-400 to-indigo-600" },
   { id: "resume", name: "Resume", icon: FileText, color: "bg-gradient-to-b from-sky-400 to-blue-500" },
   { id: "experience", name: "Experience", icon: Briefcase, color: "bg-gradient-to-b from-orange-400 to-orange-600", badge: "5" },
