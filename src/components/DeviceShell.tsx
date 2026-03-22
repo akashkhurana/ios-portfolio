@@ -3,6 +3,8 @@ import { AnimatePresence } from "framer-motion";
 import StatusBar from "./StatusBar";
 import BootSequence from "./BootSequence";
 
+import wallpaper from "../../public/wallpaper.png";
+
 export default function DeviceShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-[100dvh] w-screen items-center justify-center bg-zinc-950 p-0 sm:py-6 sm:px-8">
@@ -20,10 +22,11 @@ export default function DeviceShell({ children }: { children: React.ReactNode })
         <div className="hidden sm:block absolute top-[185px] -right-[12px] w-[4px] h-[70px] bg-zinc-800 rounded-r-md shadow-inner" />
 
         <div
+          style={{ backgroundImage: `url(${wallpaper.src})` }}
           className="
             relative overflow-hidden w-full h-full 
             sm:rounded-[2.75rem] sm:border-[8px] sm:border-black sm:ring-2 sm:ring-zinc-800 sm:shadow-[0_0_0_1px_rgba(255,255,255,0.1),_0_25px_60px_-12px_rgba(0,0,0,0.8)]
-            bg-[url('/wallpaper.png')] bg-cover bg-center text-white
+            bg-cover bg-center text-white
           "
         >
           <AnimatePresence>
